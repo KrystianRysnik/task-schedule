@@ -35,6 +35,8 @@
             this.newTaskBtn = new System.Windows.Forms.Button();
             this.navigationLabel = new System.Windows.Forms.Label();
             this.newTaskPanel = new System.Windows.Forms.Panel();
+            this.importantNoRadio = new System.Windows.Forms.RadioButton();
+            this.importantYesRadio = new System.Windows.Forms.RadioButton();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.descriptionRichTexBox = new System.Windows.Forms.RichTextBox();
             this.descriptionLabel = new System.Windows.Forms.Label();
@@ -46,11 +48,16 @@
             this.nameReqLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
             this.newTaskSubmitBtn = new System.Windows.Forms.Button();
+            this.currentTasksPanel = new System.Windows.Forms.Panel();
+            this.currentListBox = new System.Windows.Forms.ListBox();
+            this.abondedTasksPanel = new System.Windows.Forms.Panel();
+            this.completeTasksPanel = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
             this.splitContainer.SuspendLayout();
             this.newTaskPanel.SuspendLayout();
+            this.currentTasksPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer
@@ -74,6 +81,9 @@
             // 
             this.splitContainer.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(84)))), ((int)(((byte)(84)))));
             this.splitContainer.Panel2.Controls.Add(this.newTaskPanel);
+            this.splitContainer.Panel2.Controls.Add(this.currentTasksPanel);
+            this.splitContainer.Panel2.Controls.Add(this.abondedTasksPanel);
+            this.splitContainer.Panel2.Controls.Add(this.completeTasksPanel);
             this.splitContainer.Size = new System.Drawing.Size(800, 450);
             this.splitContainer.SplitterDistance = 175;
             this.splitContainer.SplitterWidth = 2;
@@ -81,6 +91,7 @@
             // 
             // abondedTasksBtn
             // 
+            this.abondedTasksBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.abondedTasksBtn.FlatAppearance.BorderSize = 0;
             this.abondedTasksBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.abondedTasksBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -96,6 +107,7 @@
             // 
             // completeTasksBtn
             // 
+            this.completeTasksBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.completeTasksBtn.FlatAppearance.BorderSize = 0;
             this.completeTasksBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.completeTasksBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -111,6 +123,7 @@
             // 
             // currentTasksBtn
             // 
+            this.currentTasksBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.currentTasksBtn.FlatAppearance.BorderSize = 0;
             this.currentTasksBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.currentTasksBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -155,6 +168,8 @@
             // newTaskPanel
             // 
             this.newTaskPanel.AutoSize = true;
+            this.newTaskPanel.Controls.Add(this.importantNoRadio);
+            this.newTaskPanel.Controls.Add(this.importantYesRadio);
             this.newTaskPanel.Controls.Add(this.dateTimePicker);
             this.newTaskPanel.Controls.Add(this.descriptionRichTexBox);
             this.newTaskPanel.Controls.Add(this.descriptionLabel);
@@ -171,6 +186,30 @@
             this.newTaskPanel.Name = "newTaskPanel";
             this.newTaskPanel.Size = new System.Drawing.Size(623, 450);
             this.newTaskPanel.TabIndex = 18;
+            // 
+            // importantNoRadio
+            // 
+            this.importantNoRadio.AutoSize = true;
+            this.importantNoRadio.ForeColor = System.Drawing.Color.White;
+            this.importantNoRadio.Location = new System.Drawing.Point(133, 210);
+            this.importantNoRadio.Name = "importantNoRadio";
+            this.importantNoRadio.Size = new System.Drawing.Size(43, 17);
+            this.importantNoRadio.TabIndex = 19;
+            this.importantNoRadio.TabStop = true;
+            this.importantNoRadio.Text = "NIE";
+            this.importantNoRadio.UseVisualStyleBackColor = true;
+            // 
+            // importantYesRadio
+            // 
+            this.importantYesRadio.AutoSize = true;
+            this.importantYesRadio.ForeColor = System.Drawing.Color.White;
+            this.importantYesRadio.Location = new System.Drawing.Point(44, 210);
+            this.importantYesRadio.Name = "importantYesRadio";
+            this.importantYesRadio.Size = new System.Drawing.Size(46, 17);
+            this.importantYesRadio.TabIndex = 18;
+            this.importantYesRadio.TabStop = true;
+            this.importantYesRadio.Text = "TAK";
+            this.importantYesRadio.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker
             // 
@@ -262,14 +301,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.nameTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
             this.nameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.nameTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.nameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.nameTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
             this.nameTextBox.Location = new System.Drawing.Point(43, 60);
             this.nameTextBox.MaxLength = 256;
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(528, 19);
+            this.nameTextBox.Size = new System.Drawing.Size(537, 19);
             this.nameTextBox.TabIndex = 2;
-            this.nameTextBox.UseWaitCursor = true;
             // 
             // nameReqLabel
             // 
@@ -298,17 +337,51 @@
             // newTaskSubmitBtn
             // 
             this.newTaskSubmitBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(124)))), ((int)(((byte)(209)))));
+            this.newTaskSubmitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.newTaskSubmitBtn.FlatAppearance.BorderSize = 0;
             this.newTaskSubmitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.newTaskSubmitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.newTaskSubmitBtn.ForeColor = System.Drawing.Color.White;
             this.newTaskSubmitBtn.Location = new System.Drawing.Point(43, 390);
             this.newTaskSubmitBtn.Name = "newTaskSubmitBtn";
-            this.newTaskSubmitBtn.Size = new System.Drawing.Size(534, 36);
+            this.newTaskSubmitBtn.Size = new System.Drawing.Size(537, 36);
             this.newTaskSubmitBtn.TabIndex = 17;
             this.newTaskSubmitBtn.Text = "DODAJ ZADANIE";
             this.newTaskSubmitBtn.UseVisualStyleBackColor = false;
             this.newTaskSubmitBtn.Click += new System.EventHandler(this.newTaskSubmitBtn_Click);
+            // 
+            // currentTasksPanel
+            // 
+            this.currentTasksPanel.Controls.Add(this.currentListBox);
+            this.currentTasksPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.currentTasksPanel.Location = new System.Drawing.Point(0, 0);
+            this.currentTasksPanel.Name = "currentTasksPanel";
+            this.currentTasksPanel.Padding = new System.Windows.Forms.Padding(40, 20, 40, 20);
+            this.currentTasksPanel.Size = new System.Drawing.Size(623, 450);
+            this.currentTasksPanel.TabIndex = 18;
+            // 
+            // currentListBox
+            // 
+            this.currentListBox.Location = new System.Drawing.Point(43, 23);
+            this.currentListBox.Name = "currentListBox";
+            this.currentListBox.Size = new System.Drawing.Size(537, 394);
+            this.currentListBox.TabIndex = 0;
+            // 
+            // abondedTasksPanel
+            // 
+            this.abondedTasksPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.abondedTasksPanel.Location = new System.Drawing.Point(0, 0);
+            this.abondedTasksPanel.Name = "abondedTasksPanel";
+            this.abondedTasksPanel.Size = new System.Drawing.Size(623, 450);
+            this.abondedTasksPanel.TabIndex = 0;
+            // 
+            // completeTasksPanel
+            // 
+            this.completeTasksPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.completeTasksPanel.Location = new System.Drawing.Point(0, 0);
+            this.completeTasksPanel.Name = "completeTasksPanel";
+            this.completeTasksPanel.Size = new System.Drawing.Size(623, 450);
+            this.completeTasksPanel.TabIndex = 18;
             // 
             // View
             // 
@@ -326,6 +399,7 @@
             this.splitContainer.ResumeLayout(false);
             this.newTaskPanel.ResumeLayout(false);
             this.newTaskPanel.PerformLayout();
+            this.currentTasksPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -350,6 +424,12 @@
         private System.Windows.Forms.Button newTaskSubmitBtn;
         private System.Windows.Forms.Panel newTaskPanel;
         private System.Windows.Forms.Button newTaskBtn;
+        private System.Windows.Forms.Panel currentTasksPanel;
+        private System.Windows.Forms.ListBox currentListBox;
+        private System.Windows.Forms.Panel completeTasksPanel;
+        private System.Windows.Forms.Panel abondedTasksPanel;
+        private System.Windows.Forms.RadioButton importantYesRadio;
+        private System.Windows.Forms.RadioButton importantNoRadio;
     }
 }
 

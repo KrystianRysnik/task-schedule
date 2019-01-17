@@ -12,6 +12,8 @@ namespace PwSW_Projekt
 {
     public partial class View : Form
     {
+        Task task;
+
         public View()
         {
             InitializeComponent();
@@ -32,7 +34,9 @@ namespace PwSW_Projekt
             abondedTasksBtn.ForeColor = Color.FromArgb(117, 117, 117);
 
             // Active Panel
-            newTaskPanel.BringToFront();
+            newTaskPanel.Visible = true;
+            currentTasksPanel.Visible = false;
+            //newTaskPanel.BringToFront();
         }
 
         private void currentTasksBtn_Click(object sender, EventArgs e)
@@ -48,6 +52,11 @@ namespace PwSW_Projekt
 
             abondedTasksBtn.Font = new Font(abondedTasksBtn.Font.Name, abondedTasksBtn.Font.Size, FontStyle.Regular);
             abondedTasksBtn.ForeColor = Color.FromArgb(117, 117, 117);
+
+            // Active Panel
+            newTaskPanel.Visible = false;
+            currentTasksPanel.Visible = true;
+            //currentTasksPanel.BringToFront();
         }
 
         private void completeTasksBtn_Click(object sender, EventArgs e)
