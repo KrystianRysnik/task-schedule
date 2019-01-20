@@ -12,11 +12,15 @@ namespace PwSW_Projekt
 {
     public partial class View : Form
     {
-        Task task;
+        List<Task> tasks = new List<Task>();
 
         public View()
         {
             InitializeComponent();
+
+            tasks.Add(new Task("Nazwa", new DateTime(2019, 2, 2, 14, 0, 0), true, "Opis"));
+            tasks.Add(new Task("Nazwa 2", new DateTime(2019, 3, 2, 14, 0, 0), true, "Opis"));
+
         }
 
         private void newTaskBtn_Click(object sender, EventArgs e)
@@ -57,6 +61,15 @@ namespace PwSW_Projekt
             newTaskPanel.Visible = false;
             currentTasksPanel.Visible = true;
             //currentTasksPanel.BringToFront();
+
+            int offsetY = 20;
+            foreach (Task task in tasks)
+            {
+                TaskPanel taskPanel = new TaskPanel(task.Name, task.Days, task.Hours, task.Minutes, task.Seconds);
+                taskPanel.Location = new System.Drawing.Point(20, offsetY);
+                currentTasksPanel.Controls.Add(taskPanel);
+                offsetY += 60;
+            }
         }
 
         private void completeTasksBtn_Click(object sender, EventArgs e)

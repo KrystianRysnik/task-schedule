@@ -49,7 +49,6 @@
             this.nameLabel = new System.Windows.Forms.Label();
             this.newTaskSubmitBtn = new System.Windows.Forms.Button();
             this.currentTasksPanel = new System.Windows.Forms.Panel();
-            this.currentListBox = new System.Windows.Forms.ListBox();
             this.abondedTasksPanel = new System.Windows.Forms.Panel();
             this.completeTasksPanel = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
@@ -57,7 +56,6 @@
             this.splitContainer.Panel2.SuspendLayout();
             this.splitContainer.SuspendLayout();
             this.newTaskPanel.SuspendLayout();
-            this.currentTasksPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer
@@ -352,20 +350,12 @@
             // 
             // currentTasksPanel
             // 
-            this.currentTasksPanel.Controls.Add(this.currentListBox);
             this.currentTasksPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.currentTasksPanel.Location = new System.Drawing.Point(0, 0);
             this.currentTasksPanel.Name = "currentTasksPanel";
             this.currentTasksPanel.Padding = new System.Windows.Forms.Padding(40, 20, 40, 20);
             this.currentTasksPanel.Size = new System.Drawing.Size(623, 450);
             this.currentTasksPanel.TabIndex = 18;
-            // 
-            // currentListBox
-            // 
-            this.currentListBox.Location = new System.Drawing.Point(43, 23);
-            this.currentListBox.Name = "currentListBox";
-            this.currentListBox.Size = new System.Drawing.Size(537, 394);
-            this.currentListBox.TabIndex = 0;
             // 
             // abondedTasksPanel
             // 
@@ -399,7 +389,6 @@
             this.splitContainer.ResumeLayout(false);
             this.newTaskPanel.ResumeLayout(false);
             this.newTaskPanel.PerformLayout();
-            this.currentTasksPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -425,7 +414,6 @@
         private System.Windows.Forms.Panel newTaskPanel;
         private System.Windows.Forms.Button newTaskBtn;
         private System.Windows.Forms.Panel currentTasksPanel;
-        private System.Windows.Forms.ListBox currentListBox;
         private System.Windows.Forms.Panel completeTasksPanel;
         private System.Windows.Forms.Panel abondedTasksPanel;
         private System.Windows.Forms.RadioButton importantYesRadio;

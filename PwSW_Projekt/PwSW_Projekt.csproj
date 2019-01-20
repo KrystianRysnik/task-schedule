@@ -46,6 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Task.cs" />
+    <Compile Include="TaskPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TaskPanel.Designer.cs">
+      <DependentUpon>TaskPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="View.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +61,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="TaskPanel.resx">
+      <DependentUpon>TaskPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View.resx">
       <DependentUpon>View.cs</DependentUpon>
     </EmbeddedResource>
