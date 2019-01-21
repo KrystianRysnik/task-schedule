@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.splitContainer = new System.Windows.Forms.SplitContainer();
-            this.abondedTasksBtn = new System.Windows.Forms.Button();
+            this.abandonedTaskBtn = new System.Windows.Forms.Button();
             this.completeTasksBtn = new System.Windows.Forms.Button();
             this.currentTasksBtn = new System.Windows.Forms.Button();
             this.newTaskBtn = new System.Windows.Forms.Button();
@@ -49,7 +49,7 @@
             this.nameLabel = new System.Windows.Forms.Label();
             this.newTaskSubmitBtn = new System.Windows.Forms.Button();
             this.currentTasksPanel = new System.Windows.Forms.Panel();
-            this.abondedTasksPanel = new System.Windows.Forms.Panel();
+            this.abandonedTasksPanel = new System.Windows.Forms.Panel();
             this.completeTasksPanel = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
@@ -68,7 +68,7 @@
             // splitContainer.Panel1
             // 
             this.splitContainer.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.splitContainer.Panel1.Controls.Add(this.abondedTasksBtn);
+            this.splitContainer.Panel1.Controls.Add(this.abandonedTaskBtn);
             this.splitContainer.Panel1.Controls.Add(this.completeTasksBtn);
             this.splitContainer.Panel1.Controls.Add(this.currentTasksBtn);
             this.splitContainer.Panel1.Controls.Add(this.newTaskBtn);
@@ -80,28 +80,28 @@
             this.splitContainer.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(84)))), ((int)(((byte)(84)))));
             this.splitContainer.Panel2.Controls.Add(this.newTaskPanel);
             this.splitContainer.Panel2.Controls.Add(this.currentTasksPanel);
-            this.splitContainer.Panel2.Controls.Add(this.abondedTasksPanel);
+            this.splitContainer.Panel2.Controls.Add(this.abandonedTasksPanel);
             this.splitContainer.Panel2.Controls.Add(this.completeTasksPanel);
             this.splitContainer.Size = new System.Drawing.Size(800, 450);
             this.splitContainer.SplitterDistance = 175;
             this.splitContainer.SplitterWidth = 2;
             this.splitContainer.TabIndex = 0;
             // 
-            // abondedTasksBtn
+            // abandonedTaskBtn
             // 
-            this.abondedTasksBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.abondedTasksBtn.FlatAppearance.BorderSize = 0;
-            this.abondedTasksBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.abondedTasksBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.abondedTasksBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.abondedTasksBtn.Location = new System.Drawing.Point(12, 171);
-            this.abondedTasksBtn.Name = "abondedTasksBtn";
-            this.abondedTasksBtn.Size = new System.Drawing.Size(150, 32);
-            this.abondedTasksBtn.TabIndex = 4;
-            this.abondedTasksBtn.Text = "Porzucone zadania";
-            this.abondedTasksBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.abondedTasksBtn.UseVisualStyleBackColor = true;
-            this.abondedTasksBtn.Click += new System.EventHandler(this.abondedTasksBtn_Click);
+            this.abandonedTaskBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.abandonedTaskBtn.FlatAppearance.BorderSize = 0;
+            this.abandonedTaskBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.abandonedTaskBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.abandonedTaskBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.abandonedTaskBtn.Location = new System.Drawing.Point(12, 171);
+            this.abandonedTaskBtn.Name = "abandonedTaskBtn";
+            this.abandonedTaskBtn.Size = new System.Drawing.Size(150, 32);
+            this.abandonedTaskBtn.TabIndex = 4;
+            this.abandonedTaskBtn.Text = "Porzucone zadania";
+            this.abandonedTaskBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.abandonedTaskBtn.UseVisualStyleBackColor = true;
+            this.abandonedTaskBtn.Click += new System.EventHandler(this.abandonedTaskBtn_Click);
             // 
             // completeTasksBtn
             // 
@@ -211,6 +211,8 @@
             // 
             // dateTimePicker
             // 
+            this.dateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dateTimePicker.CalendarForeColor = System.Drawing.Color.White;
             this.dateTimePicker.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
             this.dateTimePicker.CustomFormat = "dd MMMM yyyy, HH:mm";
@@ -223,6 +225,8 @@
             // 
             // descriptionRichTexBox
             // 
+            this.descriptionRichTexBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.descriptionRichTexBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
             this.descriptionRichTexBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.descriptionRichTexBox.Location = new System.Drawing.Point(43, 268);
@@ -357,13 +361,13 @@
             this.currentTasksPanel.Size = new System.Drawing.Size(623, 450);
             this.currentTasksPanel.TabIndex = 18;
             // 
-            // abondedTasksPanel
+            // abandonedTasksPanel
             // 
-            this.abondedTasksPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.abondedTasksPanel.Location = new System.Drawing.Point(0, 0);
-            this.abondedTasksPanel.Name = "abondedTasksPanel";
-            this.abondedTasksPanel.Size = new System.Drawing.Size(623, 450);
-            this.abondedTasksPanel.TabIndex = 0;
+            this.abandonedTasksPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.abandonedTasksPanel.Location = new System.Drawing.Point(0, 0);
+            this.abandonedTasksPanel.Name = "abandonedTasksPanel";
+            this.abandonedTasksPanel.Size = new System.Drawing.Size(623, 450);
+            this.abandonedTasksPanel.TabIndex = 0;
             // 
             // completeTasksPanel
             // 
@@ -409,13 +413,13 @@
         private System.Windows.Forms.Button completeTasksBtn;
         private System.Windows.Forms.Button currentTasksBtn;
         private System.Windows.Forms.Label navigationLabel;
-        private System.Windows.Forms.Button abondedTasksBtn;
+        private System.Windows.Forms.Button abandonedTaskBtn;
         private System.Windows.Forms.Button newTaskSubmitBtn;
         private System.Windows.Forms.Panel newTaskPanel;
         private System.Windows.Forms.Button newTaskBtn;
         private System.Windows.Forms.Panel currentTasksPanel;
         private System.Windows.Forms.Panel completeTasksPanel;
-        private System.Windows.Forms.Panel abondedTasksPanel;
+        private System.Windows.Forms.Panel abandonedTasksPanel;
         private System.Windows.Forms.RadioButton importantYesRadio;
         private System.Windows.Forms.RadioButton importantNoRadio;
     }

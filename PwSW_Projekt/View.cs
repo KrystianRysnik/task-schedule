@@ -34,8 +34,8 @@ namespace PwSW_Projekt
             completeTasksBtn.Font = new Font(completeTasksBtn.Font.Name, completeTasksBtn.Font.Size, FontStyle.Regular);
             completeTasksBtn.ForeColor = Color.FromArgb(117, 117, 117);
 
-            abondedTasksBtn.Font = new Font(abondedTasksBtn.Font.Name, abondedTasksBtn.Font.Size, FontStyle.Regular);
-            abondedTasksBtn.ForeColor = Color.FromArgb(117, 117, 117);
+            abandonedTaskBtn.Font = new Font(abandonedTaskBtn.Font.Name, abandonedTaskBtn.Font.Size, FontStyle.Regular);
+            abandonedTaskBtn.ForeColor = Color.FromArgb(117, 117, 117);
 
             // Active Panel
             newTaskPanel.Visible = true;
@@ -54,8 +54,8 @@ namespace PwSW_Projekt
             completeTasksBtn.Font = new Font(completeTasksBtn.Font.Name, completeTasksBtn.Font.Size, FontStyle.Regular);
             completeTasksBtn.ForeColor = Color.FromArgb(117, 117, 117);
 
-            abondedTasksBtn.Font = new Font(abondedTasksBtn.Font.Name, abondedTasksBtn.Font.Size, FontStyle.Regular);
-            abondedTasksBtn.ForeColor = Color.FromArgb(117, 117, 117);
+            abandonedTaskBtn.Font = new Font(abandonedTaskBtn.Font.Name, abandonedTaskBtn.Font.Size, FontStyle.Regular);
+            abandonedTaskBtn.ForeColor = Color.FromArgb(117, 117, 117);
 
             // Active Panel
             newTaskPanel.Visible = false;
@@ -67,6 +67,7 @@ namespace PwSW_Projekt
             {
                 TaskPanel taskPanel = new TaskPanel(task.Name, task.Days, task.Hours, task.Minutes, task.Seconds);
                 taskPanel.Location = new System.Drawing.Point(20, offsetY);
+                taskPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
                 currentTasksPanel.Controls.Add(taskPanel);
                 offsetY += 60;
             }
@@ -83,11 +84,11 @@ namespace PwSW_Projekt
             completeTasksBtn.Font = new Font(completeTasksBtn.Font.Name, completeTasksBtn.Font.Size, FontStyle.Bold);
             completeTasksBtn.ForeColor = Color.White;
 
-            abondedTasksBtn.Font = new Font(abondedTasksBtn.Font.Name, abondedTasksBtn.Font.Size, FontStyle.Regular);
-            abondedTasksBtn.ForeColor = Color.FromArgb(117, 117, 117);
+            abandonedTaskBtn.Font = new Font(abandonedTaskBtn.Font.Name, abandonedTaskBtn.Font.Size, FontStyle.Regular);
+            abandonedTaskBtn.ForeColor = Color.FromArgb(117, 117, 117);
         }
 
-        private void abondedTasksBtn_Click(object sender, EventArgs e)
+        private void abandonedTaskBtn_Click(object sender, EventArgs e)
         {
             newTaskBtn.Font = new Font(newTaskBtn.Font.Name, newTaskBtn.Font.Size, FontStyle.Regular);
             newTaskBtn.ForeColor = Color.FromArgb(117, 117, 117);
@@ -98,8 +99,8 @@ namespace PwSW_Projekt
             completeTasksBtn.Font = new Font(completeTasksBtn.Font.Name, completeTasksBtn.Font.Size, FontStyle.Regular);
             completeTasksBtn.ForeColor = Color.FromArgb(117, 117, 117);
 
-            abondedTasksBtn.Font = new Font(abondedTasksBtn.Font.Name, abondedTasksBtn.Font.Size, FontStyle.Bold);
-            abondedTasksBtn.ForeColor = Color.White;
+            abandonedTaskBtn.Font = new Font(abandonedTaskBtn.Font.Name, abandonedTaskBtn.Font.Size, FontStyle.Bold);
+            abandonedTaskBtn.ForeColor = Color.White;
         }
 
         private void newTaskSubmitBtn_Click(object sender, EventArgs e)
