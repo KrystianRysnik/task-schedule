@@ -8,6 +8,7 @@ namespace PwSW_Projekt
 {
     class Task
     {
+        string id;
         string name;
         DateTime date;
         bool isImportant;
@@ -20,6 +21,7 @@ namespace PwSW_Projekt
 
         public Task(string name, DateTime date, bool isImportant, string description)
         {
+            Id = Guid.NewGuid().ToString();
             Name = name;
             Date = date;
             IsImportant = isImportant;
@@ -32,6 +34,7 @@ namespace PwSW_Projekt
             Seconds = interval.Seconds;
         }
 
+        public string Id { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }
         public DateTime Date { get => date; set => date = value; }
         public bool IsImportant { get => isImportant; set => isImportant = value; }

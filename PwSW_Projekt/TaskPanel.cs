@@ -17,15 +17,31 @@ namespace PwSW_Projekt
             InitializeComponent();
         }
 
-        public TaskPanel(string name, int days, int hours, int minutes, int seconds)
+        public TaskPanel(string id, string name, int days, int hours, int minutes, int seconds)
         {
             InitializeComponent();
+
 
             nameLabel.Text = name;
             daysLabel.Text = days.ToString();
             hoursLabel.Text = hours.ToString();
             minutesLabel.Text = minutes.ToString();
             secondsLabel.Text = seconds.ToString();
+        }
+
+        private void completeBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void editBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void removeBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

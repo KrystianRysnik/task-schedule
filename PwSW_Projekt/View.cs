@@ -65,9 +65,9 @@ namespace PwSW_Projekt
             int offsetY = 20;
             foreach (Task task in tasks)
             {
-                TaskPanel taskPanel = new TaskPanel(task.Name, task.Days, task.Hours, task.Minutes, task.Seconds);
-                taskPanel.Location = new System.Drawing.Point(20, offsetY);
-                taskPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+                TaskPanel taskPanel = new TaskPanel(task.Id, task.Name, task.Days, task.Hours, task.Minutes, task.Seconds);
+                taskPanel.Location = new Point(20, offsetY);
+                taskPanel.Anchor = ((AnchorStyles)((AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right)));
                 currentTasksPanel.Controls.Add(taskPanel);
                 offsetY += 60;
             }

@@ -338,6 +338,8 @@
             // 
             // newTaskSubmitBtn
             // 
+            this.newTaskSubmitBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.newTaskSubmitBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(124)))), ((int)(((byte)(209)))));
             this.newTaskSubmitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.newTaskSubmitBtn.FlatAppearance.BorderSize = 0;
