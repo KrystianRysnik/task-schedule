@@ -13,6 +13,7 @@ namespace PwSW_Projekt
     public partial class ViewForm : Form
     {
         List<Task> tasks = new List<Task>();
+        List<Task> completeTasks = new List<Task>();
         UserControl activeUC;
 
         public ViewForm()
@@ -27,6 +28,10 @@ namespace PwSW_Projekt
             tasks.Add(new Task("Nazwa 2", new DateTime(2019, 3, 2, 14, 0, 0), true, "Opis"));
             tasks.Add(new Task("Nazwa 2", new DateTime(2019, 3, 2, 14, 0, 0), true, "Opis"));
             tasks.Add(new Task("Nazwa 2", new DateTime(2019, 3, 2, 14, 0, 0), true, "Opis"));
+
+            Task task = new Task("Nazwa zakończonego", new DateTime(2018, 1, 25, 14, 0, 0), false, "Opis");
+            task.EndDate = new DateTime(2018, 1, 23, 18, 0, 0);
+            completeTasks.Add(task);
 
         }
 
@@ -99,7 +104,23 @@ namespace PwSW_Projekt
             abandonedTaskBtn.Font = new Font(abandonedTaskBtn.Font.Name, abandonedTaskBtn.Font.Size, FontStyle.Regular);
             abandonedTaskBtn.ForeColor = Color.FromArgb(117, 117, 117);
 
+            // Active Panel
             content.Controls.Clear();
+            content.Controls.Remove(activeUC);
+            activeUC = new UC_DisplayTasks();
+            activeUC.Dock = DockStyle.Fill;
+            activeUC.Anchor = (AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right);
+            content.Controls.Add(activeUC);
+
+            int offsetY = 20;
+            foreach (Task task in completeTasks)
+            {
+                UC_EndTaskPanel endTaskPanel = new UC_EndTaskPanel(task);
+                endTaskPanel.Location = new Point(20, offsetY);
+                endTaskPanel.Anchor = (AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right);
+                activeUC.Controls.Add(endTaskPanel);
+                offsetY += 60;
+            }
         }
 
         private void abandonedTaskBtn_Click(object sender, EventArgs e)

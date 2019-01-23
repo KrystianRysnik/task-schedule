@@ -42,19 +42,19 @@
             this.label6 = new System.Windows.Forms.Label();
             this.daysLabel = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.completeIcon = new System.Windows.Forms.PictureBox();
+            this.editIcon = new System.Windows.Forms.PictureBox();
+            this.removeIcon = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.removeBtn.SuspendLayout();
             this.editBtn.SuspendLayout();
             this.completeBtn.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.completeIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.editIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.removeIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -88,10 +88,11 @@
             // 
             this.removeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.removeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.removeBtn.Controls.Add(this.pictureBox6);
+            this.removeBtn.Controls.Add(this.removeIcon);
             this.removeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.removeBtn.Location = new System.Drawing.Point(535, 2);
             this.removeBtn.Name = "removeBtn";
+            this.removeBtn.Padding = new System.Windows.Forms.Padding(10);
             this.removeBtn.Size = new System.Drawing.Size(46, 46);
             this.removeBtn.TabIndex = 3;
             this.removeBtn.Click += new System.EventHandler(this.removeBtn_Click);
@@ -100,10 +101,11 @@
             // 
             this.editBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.editBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.editBtn.Controls.Add(this.pictureBox5);
+            this.editBtn.Controls.Add(this.editIcon);
             this.editBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.editBtn.Location = new System.Drawing.Point(483, 2);
             this.editBtn.Name = "editBtn";
+            this.editBtn.Padding = new System.Windows.Forms.Padding(10);
             this.editBtn.Size = new System.Drawing.Size(46, 46);
             this.editBtn.TabIndex = 4;
             this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
@@ -112,10 +114,11 @@
             // 
             this.completeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.completeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.completeBtn.Controls.Add(this.pictureBox4);
+            this.completeBtn.Controls.Add(this.completeIcon);
             this.completeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.completeBtn.Location = new System.Drawing.Point(431, 2);
             this.completeBtn.Name = "completeBtn";
+            this.completeBtn.Padding = new System.Windows.Forms.Padding(10);
             this.completeBtn.Size = new System.Drawing.Size(46, 46);
             this.completeBtn.TabIndex = 5;
             this.completeBtn.Click += new System.EventHandler(this.completeBtn_Click);
@@ -212,44 +215,50 @@
             this.label8.TabIndex = 12;
             this.label8.Text = "DNI";
             // 
-            // pictureBox4
+            // timer1
             // 
-            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.Image = global::PwSW_Projekt.Properties.Resources.accept;
-            this.pictureBox4.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.InitialImage")));
-            this.pictureBox4.Location = new System.Drawing.Point(8, 8);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 16;
-            this.pictureBox4.TabStop = false;
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // pictureBox5
+            // completeIcon
             // 
-            this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Image = global::PwSW_Projekt.Properties.Resources.edit;
-            this.pictureBox5.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.InitialImage")));
-            this.pictureBox5.Location = new System.Drawing.Point(7, 8);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 17;
-            this.pictureBox5.TabStop = false;
+            this.completeIcon.BackColor = System.Drawing.Color.Transparent;
+            this.completeIcon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.completeIcon.Image = global::PwSW_Projekt.Properties.Resources.accept;
+            this.completeIcon.InitialImage = ((System.Drawing.Image)(resources.GetObject("completeIcon.InitialImage")));
+            this.completeIcon.Location = new System.Drawing.Point(10, 10);
+            this.completeIcon.Name = "completeIcon";
+            this.completeIcon.Size = new System.Drawing.Size(26, 26);
+            this.completeIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.completeIcon.TabIndex = 16;
+            this.completeIcon.TabStop = false;
             // 
-            // pictureBox6
+            // editIcon
             // 
-            this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox6.Image = global::PwSW_Projekt.Properties.Resources.delete;
-            this.pictureBox6.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.InitialImage")));
-            this.pictureBox6.Location = new System.Drawing.Point(9, 8);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 18;
-            this.pictureBox6.TabStop = false;
+            this.editIcon.BackColor = System.Drawing.Color.Transparent;
+            this.editIcon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.editIcon.Image = global::PwSW_Projekt.Properties.Resources.edit;
+            this.editIcon.InitialImage = ((System.Drawing.Image)(resources.GetObject("editIcon.InitialImage")));
+            this.editIcon.Location = new System.Drawing.Point(10, 10);
+            this.editIcon.Name = "editIcon";
+            this.editIcon.Size = new System.Drawing.Size(26, 26);
+            this.editIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.editIcon.TabIndex = 17;
+            this.editIcon.TabStop = false;
+            // 
+            // removeIcon
+            // 
+            this.removeIcon.BackColor = System.Drawing.Color.Transparent;
+            this.removeIcon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.removeIcon.Image = global::PwSW_Projekt.Properties.Resources.delete;
+            this.removeIcon.InitialImage = ((System.Drawing.Image)(resources.GetObject("removeIcon.InitialImage")));
+            this.removeIcon.Location = new System.Drawing.Point(10, 10);
+            this.removeIcon.Name = "removeIcon";
+            this.removeIcon.Size = new System.Drawing.Size(26, 26);
+            this.removeIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.removeIcon.TabIndex = 18;
+            this.removeIcon.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -290,12 +299,6 @@
             this.pictureBox3.TabIndex = 15;
             this.pictureBox3.TabStop = false;
             // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // UC_TaskPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -321,9 +324,9 @@
             this.removeBtn.ResumeLayout(false);
             this.editBtn.ResumeLayout(false);
             this.completeBtn.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.completeIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.editIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.removeIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -349,9 +352,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox completeIcon;
+        private System.Windows.Forms.PictureBox removeIcon;
+        private System.Windows.Forms.PictureBox editIcon;
         private System.Windows.Forms.Timer timer1;
     }
 }

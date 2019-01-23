@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UC_EndTaskPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_EndTaskPanel.Designer.cs">
+      <DependentUpon>UC_EndTaskPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_DisplayTasks.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -81,6 +87,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_DisplayTasks.resx">
       <DependentUpon>UC_DisplayTasks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_EndTaskPanel.resx">
+      <DependentUpon>UC_EndTaskPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_TaskPanel.resx">
       <DependentUpon>UC_TaskPanel.cs</DependentUpon>
