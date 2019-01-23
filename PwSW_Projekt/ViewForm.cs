@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace PwSW_Projekt
 {
-    public partial class View : Form
+    public partial class ViewForm : Form
     {
         List<Task> tasks = new List<Task>();
 
-        public View()
+        public ViewForm()
         {
             InitializeComponent();
 
