@@ -16,5 +16,10 @@ namespace PwSW_Projekt
         {
             InitializeComponent();
         }
+
+        private void newTaskSubmitBtn_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

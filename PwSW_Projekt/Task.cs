@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PwSW_Projekt
 {
-    class Task
+    public class Task
     {
         string id;
         string name;

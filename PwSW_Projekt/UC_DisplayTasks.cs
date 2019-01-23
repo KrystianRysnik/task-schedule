@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PwSW_Projekt
 {
-    public partial class DisplayTasks : UserControl
+    public partial class UC_DisplayTasks : UserControl
     {
-        public DisplayTasks()
+        public UC_DisplayTasks()
         {
             InitializeComponent();
         }

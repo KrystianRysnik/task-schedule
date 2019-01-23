@@ -10,23 +10,36 @@ using System.Windows.Forms;
 
 namespace PwSW_Projekt
 {
-    public partial class TaskPanel : UserControl
+    public partial class UC_TaskPanel : UserControl
     {
-        public TaskPanel()
+        DateTime date;
+        int days;
+        int hours;
+        int minutes;
+        int seconds;
+
+        public UC_TaskPanel()
         {
             InitializeComponent();
         }
 
-        public TaskPanel(string id, string name, int days, int hours, int minutes, int seconds)
+        public UC_TaskPanel(Task task)
         {
             InitializeComponent();
 
+            date = task.Date;
 
-            nameLabel.Text = name;
-            daysLabel.Text = days.ToString();
-            hoursLabel.Text = hours.ToString();
-            minutesLabel.Text = minutes.ToString();
-            secondsLabel.Text = seconds.ToString();
+            TimeSpan interval = date - DateTime.Now;
+            days = interval.Days;
+            hours = interval.Hours;
+            minutes = interval.Minutes;
+            seconds = interval.Seconds;
+
+            nameLabel.Text = task.Name;
+            daysLabel.Text = days < 10 ? "0" + days.ToString() : days.ToString();
+            hoursLabel.Text = hours < 10 ? "0" + hours.ToString() : hours.ToString();
+            minutesLabel.Text = minutes < 10 ? "0" + minutes.ToString() : minutes.ToString();
+            secondsLabel.Text = seconds < 10 ? "0" + seconds.ToString() : seconds.ToString();
         }
 
         private void completeBtn_Click(object sender, EventArgs e)
@@ -42,6 +55,20 @@ namespace PwSW_Projekt
         private void removeBtn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            TimeSpan interval = date - DateTime.Now;
+            days = interval.Days;
+            hours = interval.Hours;
+            minutes = interval.Minutes;
+            seconds = interval.Seconds;
+
+            daysLabel.Text = days < 10 ? "0" + days.ToString() : days.ToString();
+            hoursLabel.Text = hours < 10 ? "0" + hours.ToString() : hours.ToString();
+            minutesLabel.Text = minutes < 10 ? "0" + minutes.ToString() : minutes.ToString();
+            secondsLabel.Text = seconds < 10 ? "0" + seconds.ToString() : seconds.ToString();
         }
     }
 }

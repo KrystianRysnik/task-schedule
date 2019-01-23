@@ -13,12 +13,19 @@ namespace PwSW_Projekt
     public partial class ViewForm : Form
     {
         List<Task> tasks = new List<Task>();
+        UserControl activeUC;
 
         public ViewForm()
         {
             InitializeComponent();
 
             tasks.Add(new Task("Nazwa", new DateTime(2019, 2, 2, 14, 0, 0), true, "Opis"));
+            tasks.Add(new Task("Nazwa 2", new DateTime(2019, 3, 2, 14, 0, 0), true, "Opis"));
+            tasks.Add(new Task("Nazwa 2", new DateTime(2019, 3, 2, 14, 0, 0), true, "Opis"));
+            tasks.Add(new Task("Nazwa 2", new DateTime(2019, 3, 2, 14, 0, 0), true, "Opis"));
+            tasks.Add(new Task("Nazwa 2", new DateTime(2019, 3, 2, 14, 0, 0), true, "Opis"));
+            tasks.Add(new Task("Nazwa 2", new DateTime(2019, 3, 2, 14, 0, 0), true, "Opis"));
+            tasks.Add(new Task("Nazwa 2", new DateTime(2019, 3, 2, 14, 0, 0), true, "Opis"));
             tasks.Add(new Task("Nazwa 2", new DateTime(2019, 3, 2, 14, 0, 0), true, "Opis"));
 
         }
@@ -38,9 +45,11 @@ namespace PwSW_Projekt
             abandonedTaskBtn.ForeColor = Color.FromArgb(117, 117, 117);
 
             // Active Panel
-            newTaskPanel.Visible = true;
-            currentTasksPanel.Visible = false;
-            //newTaskPanel.BringToFront();
+            content.Controls.Clear();
+            activeUC = new UC_AddTask();
+            activeUC.Dock = DockStyle.Fill;
+            activeUC.Anchor = (AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right);
+            content.Controls.Add(activeUC);
         }
 
         private void currentTasksBtn_Click(object sender, EventArgs e)
@@ -58,17 +67,20 @@ namespace PwSW_Projekt
             abandonedTaskBtn.ForeColor = Color.FromArgb(117, 117, 117);
 
             // Active Panel
-            newTaskPanel.Visible = false;
-            currentTasksPanel.Visible = true;
-            //currentTasksPanel.BringToFront();
+            content.Controls.Clear();
+            content.Controls.Remove(activeUC);
+            activeUC = new UC_DisplayTasks();
+            activeUC.Dock = DockStyle.Fill;
+            activeUC.Anchor = (AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right);
+            content.Controls.Add(activeUC);
 
             int offsetY = 20;
             foreach (Task task in tasks)
             {
-                TaskPanel taskPanel = new TaskPanel(task.Id, task.Name, task.Days, task.Hours, task.Minutes, task.Seconds);
+                UC_TaskPanel taskPanel = new UC_TaskPanel(task);
                 taskPanel.Location = new Point(20, offsetY);
-                taskPanel.Anchor = ((AnchorStyles)((AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right)));
-                currentTasksPanel.Controls.Add(taskPanel);
+                taskPanel.Anchor = (AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right);
+                activeUC.Controls.Add(taskPanel);
                 offsetY += 60;
             }
         }
@@ -86,6 +98,8 @@ namespace PwSW_Projekt
 
             abandonedTaskBtn.Font = new Font(abandonedTaskBtn.Font.Name, abandonedTaskBtn.Font.Size, FontStyle.Regular);
             abandonedTaskBtn.ForeColor = Color.FromArgb(117, 117, 117);
+
+            content.Controls.Clear();
         }
 
         private void abandonedTaskBtn_Click(object sender, EventArgs e)
@@ -101,11 +115,6 @@ namespace PwSW_Projekt
 
             abandonedTaskBtn.Font = new Font(abandonedTaskBtn.Font.Name, abandonedTaskBtn.Font.Size, FontStyle.Bold);
             abandonedTaskBtn.ForeColor = Color.White;
-        }
-
-        private void newTaskSubmitBtn_Click(object sender, EventArgs e)
-        {
-            
         }
     }
 }

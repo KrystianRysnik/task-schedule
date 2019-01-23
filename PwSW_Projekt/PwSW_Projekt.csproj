@@ -49,26 +49,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Task.cs" />
-    <Compile Include="TaskPanel.cs">
+    <Compile Include="UC_DisplayTasks.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TaskPanel.Designer.cs">
-      <DependentUpon>TaskPanel.cs</DependentUpon>
+    <Compile Include="UC_DisplayTasks.Designer.cs">
+      <DependentUpon>UC_DisplayTasks.cs</DependentUpon>
     </Compile>
-    <Compile Include="View.cs">
+    <Compile Include="Task.cs" />
+    <Compile Include="UC_TaskPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_TaskPanel.Designer.cs">
+      <DependentUpon>UC_TaskPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_AddTask.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_AddTask.Designer.cs">
+      <DependentUpon>UC_AddTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View.Designer.cs">
-      <DependentUpon>View.cs</DependentUpon>
+    <Compile Include="ViewForm.Designer.cs">
+      <DependentUpon>ViewForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="TaskPanel.resx">
-      <DependentUpon>TaskPanel.cs</DependentUpon>
+    <EmbeddedResource Include="UC_AddTask.resx">
+      <DependentUpon>UC_AddTask.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View.resx">
-      <DependentUpon>View.cs</DependentUpon>
+    <EmbeddedResource Include="UC_DisplayTasks.resx">
+      <DependentUpon>UC_DisplayTasks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_TaskPanel.resx">
+      <DependentUpon>UC_TaskPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForm.resx">
+      <DependentUpon>ViewForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
