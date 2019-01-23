@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PwSW_Projekt
 {
-    public class Task
+    public class Task : TaskCategory
     {
         string id;
         string name;
@@ -15,9 +15,10 @@ namespace PwSW_Projekt
         bool isImportant;
         string description;
 
-        public Task(string name, DateTime date, bool isImportant, string description)
+        public Task(string name, Category category, DateTime date, bool isImportant, string description)
         {
             Id = Guid.NewGuid().ToString();
+            Category = category;
             Name = name;
             Date = date;
             IsImportant = isImportant;

@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TaskCategory.cs" />
     <Compile Include="UC_EndTaskPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>

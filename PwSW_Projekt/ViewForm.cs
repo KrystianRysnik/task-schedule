@@ -20,16 +20,16 @@ namespace PwSW_Projekt
         {
             InitializeComponent();
 
-            tasks.Add(new Task("Nazwa", new DateTime(2019, 2, 2, 14, 0, 0), true, "Opis"));
-            tasks.Add(new Task("Nazwa 2", new DateTime(2019, 3, 2, 14, 0, 0), true, "Opis"));
-            tasks.Add(new Task("Nazwa 2", new DateTime(2019, 3, 2, 14, 0, 0), true, "Opis"));
-            tasks.Add(new Task("Nazwa 2", new DateTime(2019, 3, 2, 14, 0, 0), true, "Opis"));
-            tasks.Add(new Task("Nazwa 2", new DateTime(2019, 3, 2, 14, 0, 0), true, "Opis"));
-            tasks.Add(new Task("Nazwa 2", new DateTime(2019, 3, 2, 14, 0, 0), true, "Opis"));
-            tasks.Add(new Task("Nazwa 2", new DateTime(2019, 3, 2, 14, 0, 0), true, "Opis"));
-            tasks.Add(new Task("Nazwa 2", new DateTime(2019, 3, 2, 14, 0, 0), true, "Opis"));
+            tasks.Add(new Task("Nazwa", Category.Current, new DateTime(2019, 2, 2, 14, 0, 0), true, "Opis"));
+            tasks.Add(new Task("Nazwa 2", Category.Current, new DateTime(2019, 3, 2, 14, 0, 0), true, "Opis"));
+            tasks.Add(new Task("Nazwa 2", Category.Current, new DateTime(2019, 3, 2, 14, 0, 0), true, "Opis"));
+            tasks.Add(new Task("Nazwa 2", Category.Current, new DateTime(2019, 3, 2, 14, 0, 0), true, "Opis"));
+            tasks.Add(new Task("Nazwa 2", Category.Current, new DateTime(2019, 3, 2, 14, 0, 0), true, "Opis"));
+            tasks.Add(new Task("Nazwa 2", Category.Current, new DateTime(2019, 3, 2, 14, 0, 0), true, "Opis"));
+            tasks.Add(new Task("Nazwa 2", Category.Current, new DateTime(2019, 3, 2, 14, 0, 0), true, "Opis"));
+            tasks.Add(new Task("Nazwa 2", Category.Current, new DateTime(2019, 3, 2, 14, 0, 0), true, "Opis"));
 
-            Task task = new Task("Nazwa zakończonego", new DateTime(2018, 1, 25, 14, 0, 0), false, "Opis");
+            Task task = new Task("Nazwa zakończonego", Category.Complete, new DateTime(2018, 1, 25, 14, 0, 0), false, "Opis");
             task.EndDate = new DateTime(2018, 1, 23, 18, 0, 0);
             completeTasks.Add(task);
 
