@@ -233,6 +233,7 @@
             this.completeIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.completeIcon.TabIndex = 16;
             this.completeIcon.TabStop = false;
+            this.completeIcon.Click += new System.EventHandler(this.completeIcon_Click);
             // 
             // editIcon
             // 
@@ -246,6 +247,7 @@
             this.editIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.editIcon.TabIndex = 17;
             this.editIcon.TabStop = false;
+            this.editIcon.Click += new System.EventHandler(this.editIcon_Click);
             // 
             // removeIcon
             // 
@@ -259,6 +261,7 @@
             this.removeIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.removeIcon.TabIndex = 18;
             this.removeIcon.TabStop = false;
+            this.removeIcon.Click += new System.EventHandler(this.removeIcon_Click);
             // 
             // pictureBox1
             // 

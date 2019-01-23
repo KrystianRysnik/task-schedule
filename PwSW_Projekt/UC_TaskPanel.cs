@@ -12,7 +12,7 @@ namespace PwSW_Projekt
 {
     public partial class UC_TaskPanel : UserControl
     {
-        DateTime date;
+        Task task;
         int days;
         int hours;
         int minutes;
@@ -27,9 +27,9 @@ namespace PwSW_Projekt
         {
             InitializeComponent();
 
-            date = task.Date;
+            this.task = task;
 
-            TimeSpan interval = date - DateTime.Now;
+            TimeSpan interval = this.task.Date - DateTime.Now;
             days = interval.Days;
             hours = interval.Hours;
             minutes = interval.Minutes;
@@ -44,7 +44,12 @@ namespace PwSW_Projekt
 
         private void completeBtn_Click(object sender, EventArgs e)
         {
+            complete();
+        }
 
+        private void completeIcon_Click(object sender, EventArgs e)
+        {
+            complete();
         }
 
         private void editBtn_Click(object sender, EventArgs e)
@@ -52,14 +57,44 @@ namespace PwSW_Projekt
 
         }
 
-        private void removeBtn_Click(object sender, EventArgs e)
+        private void editIcon_Click(object sender, EventArgs e)
         {
 
         }
 
+        private void removeBtn_Click(object sender, EventArgs e)
+        {
+            remove();
+        }
+
+        private void removeIcon_Click(object sender, EventArgs e)
+        {
+            remove();
+        }
+
+        private void complete()
+        {
+            task.EndDate = DateTime.Now;
+            ViewForm.completeTasks.Add(task);
+            ViewForm.tasks.Remove(task);
+
+            ViewForm.clearContent();
+            ViewForm.createListOfTasks();
+        }
+
+        private void remove()
+        {
+            task.EndDate = DateTime.Now;
+            ViewForm.abandonedTasks.Add(task);
+            ViewForm.tasks.Remove(task);
+
+            ViewForm.clearContent();
+            ViewForm.createListOfTasks();
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
-            TimeSpan interval = date - DateTime.Now;
+            TimeSpan interval = task.Date - DateTime.Now;
             days = interval.Days;
             hours = interval.Hours;
             minutes = interval.Minutes;

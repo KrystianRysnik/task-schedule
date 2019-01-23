@@ -25,6 +25,7 @@ namespace PwSW_Projekt
 
             date = task.EndDate.ToLongDateString() + ", " + task.EndDate.ToShortTimeString();
 
+            nameLabel.Text = task.Name;
             dateLabel.Text = date;
             dateLabel.Location = new Point(dateLabel.Parent.Width - dateLabel.Width - 15, 15);
         }

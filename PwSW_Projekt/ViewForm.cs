@@ -12,13 +12,17 @@ namespace PwSW_Projekt
 {
     public partial class ViewForm : Form
     {
-        List<Task> tasks = new List<Task>();
-        List<Task> completeTasks = new List<Task>();
-        UserControl activeUC;
+        public static List<Task> tasks = new List<Task>();
+        public static List<Task> completeTasks = new List<Task>();
+        public static List<Task> abandonedTasks = new List<Task>();
+        public static UserControl activeUC;
+        public static Panel activeContent;
 
         public ViewForm()
         {
             InitializeComponent();
+
+            activeContent = content;
 
             tasks.Add(new Task("Nazwa", Category.Current, new DateTime(2019, 2, 2, 14, 0, 0), true, "Opis"));
             tasks.Add(new Task("Nazwa 2", Category.Current, new DateTime(2019, 3, 2, 14, 0, 0), true, "Opis"));
@@ -49,7 +53,7 @@ namespace PwSW_Projekt
             abandonedTaskBtn.Font = new Font(abandonedTaskBtn.Font.Name, abandonedTaskBtn.Font.Size, FontStyle.Regular);
             abandonedTaskBtn.ForeColor = Color.FromArgb(117, 117, 117);
 
-            // Active Panel
+            // Clear for New Task
             content.Controls.Clear();
             activeUC = new UC_AddTask();
             activeUC.Dock = DockStyle.Fill;
@@ -71,23 +75,8 @@ namespace PwSW_Projekt
             abandonedTaskBtn.Font = new Font(abandonedTaskBtn.Font.Name, abandonedTaskBtn.Font.Size, FontStyle.Regular);
             abandonedTaskBtn.ForeColor = Color.FromArgb(117, 117, 117);
 
-            // Active Panel
-            content.Controls.Clear();
-            content.Controls.Remove(activeUC);
-            activeUC = new UC_DisplayTasks();
-            activeUC.Dock = DockStyle.Fill;
-            activeUC.Anchor = (AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right);
-            content.Controls.Add(activeUC);
-
-            int offsetY = 20;
-            foreach (Task task in tasks)
-            {
-                UC_TaskPanel taskPanel = new UC_TaskPanel(task);
-                taskPanel.Location = new Point(20, offsetY);
-                taskPanel.Anchor = (AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right);
-                activeUC.Controls.Add(taskPanel);
-                offsetY += 60;
-            }
+            clearContent();
+            createListOfTasks();
         }
 
         private void completeTasksBtn_Click(object sender, EventArgs e)
@@ -104,23 +93,8 @@ namespace PwSW_Projekt
             abandonedTaskBtn.Font = new Font(abandonedTaskBtn.Font.Name, abandonedTaskBtn.Font.Size, FontStyle.Regular);
             abandonedTaskBtn.ForeColor = Color.FromArgb(117, 117, 117);
 
-            // Active Panel
-            content.Controls.Clear();
-            content.Controls.Remove(activeUC);
-            activeUC = new UC_DisplayTasks();
-            activeUC.Dock = DockStyle.Fill;
-            activeUC.Anchor = (AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right);
-            content.Controls.Add(activeUC);
-
-            int offsetY = 20;
-            foreach (Task task in completeTasks)
-            {
-                UC_EndTaskPanel endTaskPanel = new UC_EndTaskPanel(task);
-                endTaskPanel.Location = new Point(20, offsetY);
-                endTaskPanel.Anchor = (AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right);
-                activeUC.Controls.Add(endTaskPanel);
-                offsetY += 60;
-            }
+            clearContent();
+            createListOfEndTasks(completeTasks);     
         }
 
         private void abandonedTaskBtn_Click(object sender, EventArgs e)
@@ -136,6 +110,44 @@ namespace PwSW_Projekt
 
             abandonedTaskBtn.Font = new Font(abandonedTaskBtn.Font.Name, abandonedTaskBtn.Font.Size, FontStyle.Bold);
             abandonedTaskBtn.ForeColor = Color.White;
+
+            clearContent();
+            createListOfEndTasks(abandonedTasks);
+        }
+
+        public static void clearContent()
+        {
+            activeContent.Controls.Clear();
+            activeUC = new UC_DisplayTasks();
+            activeUC.Dock = DockStyle.Fill;
+            activeUC.Anchor = (AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right);
+            activeContent.Controls.Add(activeUC);
+        }
+    
+        public static void createListOfTasks()
+        {
+            int offsetY = 20;
+            foreach (Task task in tasks)
+            {
+                UC_TaskPanel taskPanel = new UC_TaskPanel(task);
+                taskPanel.Location = new Point(20, offsetY);
+                taskPanel.Anchor = (AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right);
+                activeUC.Controls.Add(taskPanel);
+                offsetY += 60;
+            }
+        }
+
+        public static void createListOfEndTasks(List<Task> tasksList)
+        {
+            int offsetY = 20;
+            foreach (Task task in tasksList)
+            {                
+                UC_EndTaskPanel endTaskPanel = new UC_EndTaskPanel(task);
+                endTaskPanel.Location = new Point(20, offsetY);
+                endTaskPanel.Anchor = (AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right);
+                activeUC.Controls.Add(endTaskPanel);
+                offsetY += 60;
+            }
         }
     }
 }
