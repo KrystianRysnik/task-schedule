@@ -45,8 +45,8 @@ namespace PwSW_Projekt
 
                 // Add task
                 task = new Task(name, Category.Current, date, important, description);
-                ViewForm.tasks.Add(task);
-                ViewForm.tasks.Sort((t1, t2) => t1.Date.CompareTo(t2.Date));
+                Form_View.tasks.Add(task);
+                Form_View.tasks.Sort((t1, t2) => t1.Date.CompareTo(t2.Date));
 
                 // Reset fields
                 nameTextBox.Text = null;

@@ -75,21 +75,21 @@ namespace PwSW_Projekt
         private void complete()
         {
             task.EndDate = DateTime.Now;
-            ViewForm.completeTasks.Add(task);
-            ViewForm.tasks.Remove(task);
+            Form_View.completeTasks.Add(task);
+            Form_View.tasks.Remove(task);
 
-            ViewForm.clearContent();
-            ViewForm.createListOfTasks();
+            Form_View.clearContent();
+            Form_View.createListOfTasks();
         }
 
         private void remove()
         {
             task.EndDate = DateTime.Now;
-            ViewForm.abandonedTasks.Add(task);
-            ViewForm.tasks.Remove(task);
+            Form_View.abandonedTasks.Add(task);
+            Form_View.tasks.Remove(task);
 
-            ViewForm.clearContent();
-            ViewForm.createListOfTasks();
+            Form_View.clearContent();
+            Form_View.createListOfTasks();
         }
 
         private void timer1_Tick(object sender, EventArgs e)

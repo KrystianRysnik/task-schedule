@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace PwSW_Projekt
 {
-    public partial class ViewForm : Form
+    public partial class Form_View : Form
     {
         public static List<Task> tasks = new List<Task>();
         public static List<Task> completeTasks = new List<Task>();
@@ -18,7 +18,7 @@ namespace PwSW_Projekt
         public static UserControl activeUC;
         public static Panel activeContent;
 
-        public ViewForm()
+        public Form_View()
         {
             InitializeComponent();
 

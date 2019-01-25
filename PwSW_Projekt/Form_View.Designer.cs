@@ -1,6 +1,6 @@
 ﻿namespace PwSW_Projekt
 {
-    partial class ViewForm
+    partial class Form_View
     {
         /// <summary>
         /// Wymagana zmienna projektanta.
