@@ -16,7 +16,7 @@ namespace PwSW_Projekt
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ViewForm());
+            Application.Run(new Form_View());
         }
     }
 }
