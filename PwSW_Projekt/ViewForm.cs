@@ -37,6 +37,8 @@ namespace PwSW_Projekt
             task.EndDate = new DateTime(2018, 1, 23, 18, 0, 0);
             completeTasks.Add(task);
 
+            tasks.Sort((t1, t2) => t1.Date.CompareTo(t2.Date));
+
         }
 
         private void newTaskBtn_Click(object sender, EventArgs e)
