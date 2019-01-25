@@ -54,12 +54,12 @@ namespace PwSW_Projekt
 
         private void editBtn_Click(object sender, EventArgs e)
         {
-
+            edit();
         }
 
         private void editIcon_Click(object sender, EventArgs e)
         {
-
+            edit();
         }
 
         private void removeBtn_Click(object sender, EventArgs e)
@@ -80,6 +80,13 @@ namespace PwSW_Projekt
 
             Form_View.clearContent();
             Form_View.createListOfTasks();
+        }
+
+        private void edit()
+        {
+            Form_Edit formEdit = new Form_Edit();
+            formEdit.Controls.Add(new UC_AddTask(task));
+            formEdit.Show();
         }
 
         private void remove()

@@ -59,10 +59,7 @@ namespace PwSW_Projekt
 
             // Clear for New Task
             content.Controls.Clear();
-            activeUC = new UC_AddTask();
-            activeUC.Dock = DockStyle.Fill;
-            activeUC.Anchor = (AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right);
-            content.Controls.Add(activeUC);
+            
         }
 
         private void currentTasksBtn_Click(object sender, EventArgs e)
@@ -135,6 +132,13 @@ namespace PwSW_Projekt
             activeContent.Controls.Add(activeUC);
         }
     
+        public static void displayAddTask()
+        {
+            activeUC = new UC_AddTask();
+            activeUC.Dock = DockStyle.Fill;
+            activeUC.Anchor = (AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right);
+        }
+
         public static void createListOfTasks()
         {
             int offsetY = 20;

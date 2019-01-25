@@ -17,12 +17,29 @@ namespace PwSW_Projekt
         bool important;
         string description;
         Task task;
+        bool isEditMode = false;
 
         public UC_AddTask()
         {
             InitializeComponent();
 
+            isEditMode = false;
             importantNoRadio.Checked = true;
+        }
+
+        public UC_AddTask(Task task)
+        {
+            InitializeComponent();
+
+            isEditMode = true;
+            this.task = task;
+
+            newTaskSubmitBtn.Text = "EDYTUJ ZADANIE";
+            nameTextBox.Text = task.Name;
+            dateTimePicker.Value = task.Date;
+            importantYesRadio.Checked = task.IsImportant ? true : false;
+            importantNoRadio.Checked = task.IsImportant ? false : true;
+            descriptionRichTexBox.Text = task.Description;
         }
 
         private void newTaskSubmitBtn_Click(object sender, EventArgs e)
@@ -43,18 +60,33 @@ namespace PwSW_Projekt
                 important = importantYesRadio.Checked ? true : false;
                 description = descriptionRichTexBox.Text;
 
-                // Add task
+                if (task != null && isEditMode)
+                {
+                    // Remove previously task
+                    Form_View.tasks.Remove( Form_View.tasks.Find( t => t.Id.Contains( task.Id ) ) );
+                }
+              
+                // Create and add new/edited task
                 task = new Task(name, Category.Current, date, important, description);
                 Form_View.tasks.Add(task);
                 Form_View.tasks.Sort((t1, t2) => t1.Date.CompareTo(t2.Date));
 
-                // Reset fields
-                nameTextBox.Text = null;
-                dateTimePicker.Value = DateTime.Now;
-                importantNoRadio.Checked = true;
-                descriptionRichTexBox.Text = null;
+                if (isEditMode)
+                {
+                    // Hide edit mode
+                    Parent.Hide();
+                    Form_View.clearContent();
+                    Form_View.createListOfTasks();
+                }
+                else
+                {
+                    // Reset fields
+                    nameTextBox.Text = null;
+                    dateTimePicker.Value = DateTime.Now;
+                    importantNoRadio.Checked = true;
+                    descriptionRichTexBox.Text = null;
+                }
             }
-
         }
     }
 }
