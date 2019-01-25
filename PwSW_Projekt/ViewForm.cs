@@ -42,7 +42,9 @@ namespace PwSW_Projekt
         }
 
         private void newTaskBtn_Click(object sender, EventArgs e)
-        {
+        {        
+            activeTab.Location = new Point(activeTab.Location.X, newTaskBtn.Location.Y);
+
             newTaskBtn.Font = new Font(newTaskBtn.Font.Name, newTaskBtn.Font.Size, FontStyle.Bold);
             newTaskBtn.ForeColor = Color.White;
 
@@ -65,6 +67,8 @@ namespace PwSW_Projekt
 
         private void currentTasksBtn_Click(object sender, EventArgs e)
         {
+            activeTab.Location = new Point(activeTab.Location.X, currentTasksBtn.Location.Y);
+
             newTaskBtn.Font = new Font(newTaskBtn.Font.Name, newTaskBtn.Font.Size, FontStyle.Regular);
             newTaskBtn.ForeColor = Color.FromArgb(117, 117, 117);
 
@@ -83,6 +87,8 @@ namespace PwSW_Projekt
 
         private void completeTasksBtn_Click(object sender, EventArgs e)
         {
+            activeTab.Location = new Point(activeTab.Location.X, completeTasksBtn.Location.Y);
+
             newTaskBtn.Font = new Font(newTaskBtn.Font.Name, newTaskBtn.Font.Size, FontStyle.Regular);
             newTaskBtn.ForeColor = Color.FromArgb(117, 117, 117);
 
@@ -101,6 +107,8 @@ namespace PwSW_Projekt
 
         private void abandonedTaskBtn_Click(object sender, EventArgs e)
         {
+            activeTab.Location = new Point(activeTab.Location.X, abandonedTaskBtn.Location.Y);
+
             newTaskBtn.Font = new Font(newTaskBtn.Font.Name, newTaskBtn.Font.Size, FontStyle.Regular);
             newTaskBtn.ForeColor = Color.FromArgb(117, 117, 117);
 
