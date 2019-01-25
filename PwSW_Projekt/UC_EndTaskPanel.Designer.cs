@@ -66,7 +66,7 @@
             this.Controls.Add(this.dateLabel);
             this.Controls.Add(this.nameLabel);
             this.Name = "UC_EndTaskPanel";
-            this.Size = new System.Drawing.Size(583, 50);
+            this.Size = new System.Drawing.Size(583, 60);
             this.ResumeLayout(false);
             this.PerformLayout();
 

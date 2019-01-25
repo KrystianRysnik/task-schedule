@@ -129,6 +129,7 @@ namespace PwSW_Projekt
         {
             activeContent.Controls.Clear();
             activeUC = new UC_DisplayTasks();
+            activeUC.Width = activeContent.Width;
             activeUC.Dock = DockStyle.Fill;
             activeUC.Anchor = (AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right);
             activeContent.Controls.Add(activeUC);
@@ -140,6 +141,7 @@ namespace PwSW_Projekt
             foreach (Task task in tasks)
             {
                 UC_TaskPanel taskPanel = new UC_TaskPanel(task);
+                taskPanel.Width = activeUC.Width - 40;
                 taskPanel.Location = new Point(20, offsetY);
                 taskPanel.Anchor = (AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right);
                 activeUC.Controls.Add(taskPanel);
@@ -153,6 +155,7 @@ namespace PwSW_Projekt
             foreach (Task task in tasksList)
             {                
                 UC_EndTaskPanel endTaskPanel = new UC_EndTaskPanel(task);
+                endTaskPanel.Width = activeUC.Width - 40;
                 endTaskPanel.Location = new Point(20, offsetY);
                 endTaskPanel.Anchor = (AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right);
                 activeUC.Controls.Add(endTaskPanel);

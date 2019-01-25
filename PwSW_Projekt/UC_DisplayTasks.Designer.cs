@@ -34,6 +34,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.Name = "UC_DisplayTasks";
             this.Size = new System.Drawing.Size(623, 450);
             this.ResumeLayout(false);

@@ -33,8 +33,11 @@
             this.nameLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.removeBtn = new System.Windows.Forms.Panel();
+            this.removeIcon = new System.Windows.Forms.PictureBox();
             this.editBtn = new System.Windows.Forms.Panel();
+            this.editIcon = new System.Windows.Forms.PictureBox();
             this.completeBtn = new System.Windows.Forms.Panel();
+            this.completeIcon = new System.Windows.Forms.PictureBox();
             this.secondsLabel = new System.Windows.Forms.Label();
             this.minutesLabel = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,18 +46,15 @@
             this.daysLabel = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.completeIcon = new System.Windows.Forms.PictureBox();
-            this.editIcon = new System.Windows.Forms.PictureBox();
-            this.removeIcon = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.removeBtn.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.removeIcon)).BeginInit();
             this.editBtn.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.editIcon)).BeginInit();
             this.completeBtn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.completeIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.editIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.removeIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -97,6 +97,20 @@
             this.removeBtn.TabIndex = 3;
             this.removeBtn.Click += new System.EventHandler(this.removeBtn_Click);
             // 
+            // removeIcon
+            // 
+            this.removeIcon.BackColor = System.Drawing.Color.Transparent;
+            this.removeIcon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.removeIcon.Image = global::PwSW_Projekt.Properties.Resources.delete;
+            this.removeIcon.InitialImage = ((System.Drawing.Image)(resources.GetObject("removeIcon.InitialImage")));
+            this.removeIcon.Location = new System.Drawing.Point(10, 10);
+            this.removeIcon.Name = "removeIcon";
+            this.removeIcon.Size = new System.Drawing.Size(26, 26);
+            this.removeIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.removeIcon.TabIndex = 18;
+            this.removeIcon.TabStop = false;
+            this.removeIcon.Click += new System.EventHandler(this.removeIcon_Click);
+            // 
             // editBtn
             // 
             this.editBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -110,6 +124,20 @@
             this.editBtn.TabIndex = 4;
             this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
             // 
+            // editIcon
+            // 
+            this.editIcon.BackColor = System.Drawing.Color.Transparent;
+            this.editIcon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.editIcon.Image = global::PwSW_Projekt.Properties.Resources.edit;
+            this.editIcon.InitialImage = ((System.Drawing.Image)(resources.GetObject("editIcon.InitialImage")));
+            this.editIcon.Location = new System.Drawing.Point(10, 10);
+            this.editIcon.Name = "editIcon";
+            this.editIcon.Size = new System.Drawing.Size(26, 26);
+            this.editIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.editIcon.TabIndex = 17;
+            this.editIcon.TabStop = false;
+            this.editIcon.Click += new System.EventHandler(this.editIcon_Click);
+            // 
             // completeBtn
             // 
             this.completeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -122,6 +150,20 @@
             this.completeBtn.Size = new System.Drawing.Size(46, 46);
             this.completeBtn.TabIndex = 5;
             this.completeBtn.Click += new System.EventHandler(this.completeBtn_Click);
+            // 
+            // completeIcon
+            // 
+            this.completeIcon.BackColor = System.Drawing.Color.Transparent;
+            this.completeIcon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.completeIcon.Image = global::PwSW_Projekt.Properties.Resources.accept;
+            this.completeIcon.InitialImage = ((System.Drawing.Image)(resources.GetObject("completeIcon.InitialImage")));
+            this.completeIcon.Location = new System.Drawing.Point(10, 10);
+            this.completeIcon.Name = "completeIcon";
+            this.completeIcon.Size = new System.Drawing.Size(26, 26);
+            this.completeIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.completeIcon.TabIndex = 16;
+            this.completeIcon.TabStop = false;
+            this.completeIcon.Click += new System.EventHandler(this.completeIcon_Click);
             // 
             // secondsLabel
             // 
@@ -221,48 +263,6 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // completeIcon
-            // 
-            this.completeIcon.BackColor = System.Drawing.Color.Transparent;
-            this.completeIcon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.completeIcon.Image = global::PwSW_Projekt.Properties.Resources.accept;
-            this.completeIcon.InitialImage = ((System.Drawing.Image)(resources.GetObject("completeIcon.InitialImage")));
-            this.completeIcon.Location = new System.Drawing.Point(10, 10);
-            this.completeIcon.Name = "completeIcon";
-            this.completeIcon.Size = new System.Drawing.Size(26, 26);
-            this.completeIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.completeIcon.TabIndex = 16;
-            this.completeIcon.TabStop = false;
-            this.completeIcon.Click += new System.EventHandler(this.completeIcon_Click);
-            // 
-            // editIcon
-            // 
-            this.editIcon.BackColor = System.Drawing.Color.Transparent;
-            this.editIcon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.editIcon.Image = global::PwSW_Projekt.Properties.Resources.edit;
-            this.editIcon.InitialImage = ((System.Drawing.Image)(resources.GetObject("editIcon.InitialImage")));
-            this.editIcon.Location = new System.Drawing.Point(10, 10);
-            this.editIcon.Name = "editIcon";
-            this.editIcon.Size = new System.Drawing.Size(26, 26);
-            this.editIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.editIcon.TabIndex = 17;
-            this.editIcon.TabStop = false;
-            this.editIcon.Click += new System.EventHandler(this.editIcon_Click);
-            // 
-            // removeIcon
-            // 
-            this.removeIcon.BackColor = System.Drawing.Color.Transparent;
-            this.removeIcon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.removeIcon.Image = global::PwSW_Projekt.Properties.Resources.delete;
-            this.removeIcon.InitialImage = ((System.Drawing.Image)(resources.GetObject("removeIcon.InitialImage")));
-            this.removeIcon.Location = new System.Drawing.Point(10, 10);
-            this.removeIcon.Name = "removeIcon";
-            this.removeIcon.Size = new System.Drawing.Size(26, 26);
-            this.removeIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.removeIcon.TabIndex = 18;
-            this.removeIcon.TabStop = false;
-            this.removeIcon.Click += new System.EventHandler(this.removeIcon_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -323,13 +323,13 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox3);
             this.Name = "UC_TaskPanel";
-            this.Size = new System.Drawing.Size(583, 50);
+            this.Size = new System.Drawing.Size(583, 60);
             this.removeBtn.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.removeIcon)).EndInit();
             this.editBtn.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.editIcon)).EndInit();
             this.completeBtn.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.completeIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.editIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.removeIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
