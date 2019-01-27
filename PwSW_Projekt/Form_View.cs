@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,6 @@ namespace PwSW_Projekt
 {
     public partial class Form_View : Form
     {
-        public static List<Task> tasks = new List<Task>();
-        public static List<Task> completeTasks = new List<Task>();
-        public static List<Task> abandonedTasks = new List<Task>();
         public static UserControl activeUC;
         public static Panel activeContent;
 
@@ -24,21 +22,17 @@ namespace PwSW_Projekt
 
             activeContent = content;
 
-            tasks.Add(new Task("Nazwa", Category.Current, new DateTime(2019, 2, 2, 14, 0, 0), true, "Opis"));
-            tasks.Add(new Task("Nazwa 2", Category.Current, new DateTime(2019, 3, 2, 14, 0, 0), true, "Opis"));
-            tasks.Add(new Task("Nazwa 2", Category.Current, new DateTime(2019, 3, 2, 14, 0, 0), true, "Opis"));
-            tasks.Add(new Task("Nazwa 2", Category.Current, new DateTime(2019, 3, 2, 14, 0, 0), true, "Opis"));
-            tasks.Add(new Task("Nazwa 2", Category.Current, new DateTime(2019, 3, 2, 14, 0, 0), true, "Opis"));
-            tasks.Add(new Task("Nazwa 2", Category.Current, new DateTime(2019, 3, 2, 14, 0, 0), true, "Opis"));
-            tasks.Add(new Task("Nazwa 2", Category.Current, new DateTime(2019, 3, 2, 14, 0, 0), true, "Opis"));
-            tasks.Add(new Task("Nazwa 2", Category.Current, new DateTime(2019, 3, 2, 14, 0, 0), true, "Opis"));
+            JsonData.getTasksFromJson();
 
-            Task task = new Task("Nazwa zakończonego", Category.Complete, new DateTime(2018, 1, 25, 14, 0, 0), false, "Opis");
-            task.EndDate = new DateTime(2018, 1, 23, 18, 0, 0);
-            completeTasks.Add(task);
+            // tasks.Sort((t1, t2) => t1.Date.CompareTo(t2.Date));
 
-            tasks.Sort((t1, t2) => t1.Date.CompareTo(t2.Date));
 
+        }
+            
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+            JsonData.setTasksToJson();
         }
 
         private void newTaskBtn_Click(object sender, EventArgs e)
@@ -59,7 +53,7 @@ namespace PwSW_Projekt
 
             // Clear for New Task
             content.Controls.Clear();
-            
+            displayAddTask();
         }
 
         private void currentTasksBtn_Click(object sender, EventArgs e)
@@ -99,7 +93,7 @@ namespace PwSW_Projekt
             abandonedTaskBtn.ForeColor = Color.FromArgb(117, 117, 117);
 
             clearContent();
-            createListOfEndTasks(completeTasks);     
+            createListOfEndTasks(JsonData.completeTasks);     
         }
 
         private void abandonedTaskBtn_Click(object sender, EventArgs e)
@@ -119,7 +113,7 @@ namespace PwSW_Projekt
             abandonedTaskBtn.ForeColor = Color.White;
 
             clearContent();
-            createListOfEndTasks(abandonedTasks);
+            createListOfEndTasks(JsonData.abandonedTasks);
         }
 
         public static void clearContent()
@@ -137,12 +131,13 @@ namespace PwSW_Projekt
             activeUC = new UC_AddTask();
             activeUC.Dock = DockStyle.Fill;
             activeUC.Anchor = (AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right);
+            activeContent.Controls.Add(activeUC);
         }
 
         public static void createListOfTasks()
         {
             int offsetY = 20;
-            foreach (Task task in tasks)
+            foreach (Task task in JsonData.currentTasks)
             {
                 UC_TaskPanel taskPanel = new UC_TaskPanel(task);
                 taskPanel.Width = activeUC.Width - 40;

@@ -75,8 +75,8 @@ namespace PwSW_Projekt
         private void complete()
         {
             task.EndDate = DateTime.Now;
-            Form_View.completeTasks.Add(task);
-            Form_View.tasks.Remove(task);
+            JsonData.completeTasks.Add(task);
+            JsonData.currentTasks.Remove(task);
 
             Form_View.clearContent();
             Form_View.createListOfTasks();
@@ -92,8 +92,8 @@ namespace PwSW_Projekt
         private void remove()
         {
             task.EndDate = DateTime.Now;
-            Form_View.abandonedTasks.Add(task);
-            Form_View.tasks.Remove(task);
+            JsonData.abandonedTasks.Add(task);
+            JsonData.currentTasks.Remove(task);
 
             Form_View.clearContent();
             Form_View.createListOfTasks();

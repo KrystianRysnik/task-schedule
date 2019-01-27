@@ -63,13 +63,13 @@ namespace PwSW_Projekt
                 if (task != null && isEditMode)
                 {
                     // Remove previously task
-                    Form_View.tasks.Remove( Form_View.tasks.Find( t => t.Id.Contains( task.Id ) ) );
+                    JsonData.currentTasks.Remove(JsonData.currentTasks.Find( t => t.Id.Contains( task.Id ) ) );
                 }
               
                 // Create and add new/edited task
                 task = new Task(name, Category.Current, date, important, description);
-                Form_View.tasks.Add(task);
-                Form_View.tasks.Sort((t1, t2) => t1.Date.CompareTo(t2.Date));
+                JsonData.currentTasks.Add(task);
+                JsonData.currentTasks.Sort((t1, t2) => t1.Date.CompareTo(t2.Date));
 
                 if (isEditMode)
                 {

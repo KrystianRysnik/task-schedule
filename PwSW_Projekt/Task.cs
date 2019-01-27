@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,6 +31,6 @@ namespace PwSW_Projekt
         public DateTime Date { get => date; set => date = value; }
         public bool IsImportant { get => isImportant; set => isImportant = value; }
         public string Description { get => description; set => description = value; }
-        public DateTime EndDate { get => endDate; set => endDate = value; }
+        public DateTime EndDate { get => endDate; set => endDate = value; }       
     }
 }

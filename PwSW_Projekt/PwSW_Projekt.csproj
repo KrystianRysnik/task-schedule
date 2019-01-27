@@ -55,6 +55,7 @@
     <Compile Include="Form_Edit.Designer.cs">
       <DependentUpon>Form_Edit.cs</DependentUpon>
     </Compile>
+    <Compile Include="JsonData.cs" />
     <Compile Include="TaskCategory.cs" />
     <Compile Include="UC_EndTaskPanel.cs">
       <SubType>UserControl</SubType>
