@@ -23,10 +23,6 @@ namespace PwSW_Projekt
             activeContent = content;
 
             JsonData.getTasksFromJson();
-
-            // tasks.Sort((t1, t2) => t1.Date.CompareTo(t2.Date));
-
-
         }
             
         protected override void OnFormClosing(FormClosingEventArgs e)

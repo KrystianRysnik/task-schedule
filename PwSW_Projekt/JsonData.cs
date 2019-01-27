@@ -27,6 +27,8 @@ namespace PwSW_Projekt
                 currentTasks.AddRange(tasks["current"]);
                 completeTasks.AddRange(tasks["complete"]);
                 abandonedTasks.AddRange(tasks["abandoned"]);
+
+                currentTasks.Sort((t1, t2) => t1.Date.CompareTo(t2.Date));
                 tasks.Clear();
             }
         } 
