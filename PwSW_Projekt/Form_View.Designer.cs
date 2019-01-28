@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.splitContainer = new System.Windows.Forms.SplitContainer();
+            this.activeTab = new System.Windows.Forms.Panel();
             this.abandonedTaskBtn = new System.Windows.Forms.Button();
             this.completeTasksBtn = new System.Windows.Forms.Button();
             this.currentTasksBtn = new System.Windows.Forms.Button();
-            this.newTaskBtn = new System.Windows.Forms.Button();
             this.navigationLabel = new System.Windows.Forms.Label();
+            this.newTaskBtn = new System.Windows.Forms.Button();
             this.content = new System.Windows.Forms.Panel();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.activeTab = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
@@ -69,6 +69,15 @@
             this.splitContainer.SplitterDistance = 175;
             this.splitContainer.SplitterWidth = 2;
             this.splitContainer.TabIndex = 0;
+            // 
+            // activeTab
+            // 
+            this.activeTab.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.activeTab.BackColor = System.Drawing.Color.White;
+            this.activeTab.Location = new System.Drawing.Point(171, 87);
+            this.activeTab.Name = "activeTab";
+            this.activeTab.Size = new System.Drawing.Size(4, 32);
+            this.activeTab.TabIndex = 5;
             // 
             // abandonedTaskBtn
             // 
@@ -115,8 +124,8 @@
             this.currentTasksBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.currentTasksBtn.FlatAppearance.BorderSize = 0;
             this.currentTasksBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.currentTasksBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.currentTasksBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.currentTasksBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.currentTasksBtn.ForeColor = System.Drawing.Color.White;
             this.currentTasksBtn.Location = new System.Drawing.Point(0, 87);
             this.currentTasksBtn.Name = "currentTasksBtn";
             this.currentTasksBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -126,26 +135,6 @@
             this.currentTasksBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.currentTasksBtn.UseVisualStyleBackColor = true;
             this.currentTasksBtn.Click += new System.EventHandler(this.currentTasksBtn_Click);
-            // 
-            // newTaskBtn
-            // 
-            this.newTaskBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.newTaskBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.newTaskBtn.FlatAppearance.BorderSize = 0;
-            this.newTaskBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.newTaskBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.newTaskBtn.ForeColor = System.Drawing.Color.White;
-            this.newTaskBtn.Location = new System.Drawing.Point(0, 55);
-            this.newTaskBtn.Name = "newTaskBtn";
-            this.newTaskBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.newTaskBtn.Size = new System.Drawing.Size(172, 32);
-            this.newTaskBtn.TabIndex = 1;
-            this.newTaskBtn.Text = "Nowe zadanie";
-            this.newTaskBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.newTaskBtn.UseCompatibleTextRendering = true;
-            this.newTaskBtn.UseVisualStyleBackColor = true;
-            this.newTaskBtn.Click += new System.EventHandler(this.newTaskBtn_Click);
             // 
             // navigationLabel
             // 
@@ -158,6 +147,26 @@
             this.navigationLabel.TabIndex = 0;
             this.navigationLabel.Text = "NAWIGACJA";
             // 
+            // newTaskBtn
+            // 
+            this.newTaskBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.newTaskBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.newTaskBtn.FlatAppearance.BorderSize = 0;
+            this.newTaskBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.newTaskBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.newTaskBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.newTaskBtn.Location = new System.Drawing.Point(0, 55);
+            this.newTaskBtn.Name = "newTaskBtn";
+            this.newTaskBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.newTaskBtn.Size = new System.Drawing.Size(172, 32);
+            this.newTaskBtn.TabIndex = 1;
+            this.newTaskBtn.Text = "Nowe zadanie";
+            this.newTaskBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.newTaskBtn.UseCompatibleTextRendering = true;
+            this.newTaskBtn.UseVisualStyleBackColor = true;
+            this.newTaskBtn.Click += new System.EventHandler(this.newTaskBtn_Click);
+            // 
             // content
             // 
             this.content.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -165,25 +174,16 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.content.Location = new System.Drawing.Point(3, 3);
             this.content.Name = "content";
-            this.content.Size = new System.Drawing.Size(619, 447);
+            this.content.Size = new System.Drawing.Size(621, 447);
             this.content.TabIndex = 0;
             // 
-            // activeTab
-            // 
-            this.activeTab.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.activeTab.BackColor = System.Drawing.Color.White;
-            this.activeTab.Location = new System.Drawing.Point(171, 55);
-            this.activeTab.Name = "activeTab";
-            this.activeTab.Size = new System.Drawing.Size(4, 32);
-            this.activeTab.TabIndex = 5;
-            // 
-            // ViewForm
+            // Form_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.splitContainer);
-            this.Name = "ViewForm";
+            this.Name = "Form_View";
             this.Text = "Form1";
             this.splitContainer.Panel1.ResumeLayout(false);
             this.splitContainer.Panel1.PerformLayout();

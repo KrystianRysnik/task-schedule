@@ -40,6 +40,8 @@ namespace PwSW_Projekt
             hoursLabel.Text = hours < 10 ? "0" + hours.ToString() : hours.ToString();
             minutesLabel.Text = minutes < 10 ? "0" + minutes.ToString() : minutes.ToString();
             secondsLabel.Text = seconds < 10 ? "0" + seconds.ToString() : seconds.ToString();
+
+            importantLabel.Visible = task.IsImportant;
         }
 
         private void completeBtn_Click(object sender, EventArgs e)
@@ -85,18 +87,23 @@ namespace PwSW_Projekt
         private void edit()
         {
             Form_Edit formEdit = new Form_Edit();
-            formEdit.Controls.Add(new UC_AddTask(task));
+            UC_AddTask editTask = new UC_AddTask(task);
+            editTask.Width = formEdit.Width;
+            editTask.Anchor = (AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right);
+            formEdit.Controls.Add(editTask);
             formEdit.Show();
         }
 
         private void remove()
         {
             task.EndDate = DateTime.Now;
-            JsonData.abandonedTasks.Add(task);
-            JsonData.currentTasks.Remove(task);
 
-            Form_View.clearContent();
-            Form_View.createListOfTasks();
+            Form_Edit formEdit = new Form_Edit();
+            UC_AddComment addComment = new UC_AddComment(task);
+            addComment.Width = formEdit.Width;
+            addComment.Anchor = (AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right);
+            formEdit.Controls.Add(addComment);
+            formEdit.Show();          
         }
 
         private void timer1_Tick(object sender, EventArgs e)

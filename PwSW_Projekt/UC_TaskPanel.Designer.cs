@@ -49,6 +49,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.importantLabel = new System.Windows.Forms.Label();
             this.removeBtn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.removeIcon)).BeginInit();
             this.editBtn.SuspendLayout();
@@ -302,11 +303,23 @@
             this.pictureBox3.TabIndex = 15;
             this.pictureBox3.TabStop = false;
             // 
+            // importantLabel
+            // 
+            this.importantLabel.AutoSize = true;
+            this.importantLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.importantLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(83)))), ((int)(((byte)(70)))));
+            this.importantLabel.Location = new System.Drawing.Point(15, 4);
+            this.importantLabel.Name = "importantLabel";
+            this.importantLabel.Size = new System.Drawing.Size(59, 13);
+            this.importantLabel.TabIndex = 16;
+            this.importantLabel.Text = "[ PILNE ]";
+            // 
             // UC_TaskPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(84)))), ((int)(((byte)(84)))));
+            this.Controls.Add(this.importantLabel);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.daysLabel);
             this.Controls.Add(this.label6);
@@ -359,5 +372,6 @@
         private System.Windows.Forms.PictureBox removeIcon;
         private System.Windows.Forms.PictureBox editIcon;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label importantLabel;
     }
 }

@@ -15,7 +15,6 @@ namespace PwSW_Projekt
         string name;
         DateTime date;
         bool important;
-        string description;
         Task task;
         bool isEditMode = false;
 
@@ -39,7 +38,6 @@ namespace PwSW_Projekt
             dateTimePicker.Value = task.Date;
             importantYesRadio.Checked = task.IsImportant ? true : false;
             importantNoRadio.Checked = task.IsImportant ? false : true;
-            descriptionRichTexBox.Text = task.Description;
         }
 
         private void newTaskSubmitBtn_Click(object sender, EventArgs e)
@@ -58,7 +56,6 @@ namespace PwSW_Projekt
                 name = nameTextBox.Text;
                 date = dateTimePicker.Value;
                 important = importantYesRadio.Checked ? true : false;
-                description = descriptionRichTexBox.Text;
 
                 if (task != null && isEditMode)
                 {
@@ -67,7 +64,7 @@ namespace PwSW_Projekt
                 }
               
                 // Create and add new/edited task
-                task = new Task(name, Category.Current, date, important, description);
+                task = new Task(name, Category.Current, date, important);
                 JsonData.currentTasks.Add(task);
                 JsonData.currentTasks.Sort((t1, t2) => t1.Date.CompareTo(t2.Date));
 
@@ -84,7 +81,6 @@ namespace PwSW_Projekt
                     nameTextBox.Text = null;
                     dateTimePicker.Value = DateTime.Now;
                     importantNoRadio.Checked = true;
-                    descriptionRichTexBox.Text = null;
                 }
             }
         }

@@ -23,6 +23,9 @@ namespace PwSW_Projekt
             activeContent = content;
 
             JsonData.getTasksFromJson();
+
+            clearContent();
+            createListOfTasks();
         }
             
         protected override void OnFormClosing(FormClosingEventArgs e)

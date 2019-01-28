@@ -32,8 +32,6 @@
             this.importantNoRadio = new System.Windows.Forms.RadioButton();
             this.importantYesRadio = new System.Windows.Forms.RadioButton();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.descriptionRichTexBox = new System.Windows.Forms.RichTextBox();
-            this.descriptionLabel = new System.Windows.Forms.Label();
             this.importantReqLabel = new System.Windows.Forms.Label();
             this.importantLabel = new System.Windows.Forms.Label();
             this.dateReqLabel = new System.Windows.Forms.Label();
@@ -47,16 +45,11 @@
             // 
             // newTaskPanel
             // 
-            this.newTaskPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.newTaskPanel.AutoSize = true;
             this.newTaskPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(84)))), ((int)(((byte)(84)))));
             this.newTaskPanel.Controls.Add(this.importantNoRadio);
             this.newTaskPanel.Controls.Add(this.importantYesRadio);
             this.newTaskPanel.Controls.Add(this.dateTimePicker);
-            this.newTaskPanel.Controls.Add(this.descriptionRichTexBox);
-            this.newTaskPanel.Controls.Add(this.descriptionLabel);
             this.newTaskPanel.Controls.Add(this.importantReqLabel);
             this.newTaskPanel.Controls.Add(this.importantLabel);
             this.newTaskPanel.Controls.Add(this.dateReqLabel);
@@ -65,9 +58,10 @@
             this.newTaskPanel.Controls.Add(this.nameReqLabel);
             this.newTaskPanel.Controls.Add(this.nameLabel);
             this.newTaskPanel.Controls.Add(this.newTaskSubmitBtn);
+            this.newTaskPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.newTaskPanel.Location = new System.Drawing.Point(0, 0);
             this.newTaskPanel.Name = "newTaskPanel";
-            this.newTaskPanel.Size = new System.Drawing.Size(623, 450);
+            this.newTaskPanel.Size = new System.Drawing.Size(623, 330);
             this.newTaskPanel.TabIndex = 19;
             // 
             // importantNoRadio
@@ -105,34 +99,8 @@
             this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker.Location = new System.Drawing.Point(43, 133);
             this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(537, 23);
+            this.dateTimePicker.Size = new System.Drawing.Size(533, 23);
             this.dateTimePicker.TabIndex = 16;
-            // 
-            // descriptionRichTexBox
-            // 
-            this.descriptionRichTexBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.descriptionRichTexBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
-            this.descriptionRichTexBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.descriptionRichTexBox.Location = new System.Drawing.Point(43, 268);
-            this.descriptionRichTexBox.MaxLength = 512;
-            this.descriptionRichTexBox.Name = "descriptionRichTexBox";
-            this.descriptionRichTexBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.descriptionRichTexBox.Size = new System.Drawing.Size(537, 96);
-            this.descriptionRichTexBox.TabIndex = 12;
-            this.descriptionRichTexBox.Text = "";
-            // 
-            // descriptionLabel
-            // 
-            this.descriptionLabel.AutoSize = true;
-            this.descriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.descriptionLabel.ForeColor = System.Drawing.Color.White;
-            this.descriptionLabel.Location = new System.Drawing.Point(40, 246);
-            this.descriptionLabel.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(37, 17);
-            this.descriptionLabel.TabIndex = 10;
-            this.descriptionLabel.Text = "Opis";
             // 
             // importantReqLabel
             // 
@@ -194,7 +162,7 @@
             this.nameTextBox.Location = new System.Drawing.Point(43, 60);
             this.nameTextBox.MaxLength = 256;
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(537, 19);
+            this.nameTextBox.Size = new System.Drawing.Size(533, 19);
             this.nameTextBox.TabIndex = 2;
             // 
             // nameReqLabel
@@ -231,9 +199,9 @@
             this.newTaskSubmitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.newTaskSubmitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.newTaskSubmitBtn.ForeColor = System.Drawing.Color.White;
-            this.newTaskSubmitBtn.Location = new System.Drawing.Point(43, 390);
+            this.newTaskSubmitBtn.Location = new System.Drawing.Point(43, 250);
             this.newTaskSubmitBtn.Name = "newTaskSubmitBtn";
-            this.newTaskSubmitBtn.Size = new System.Drawing.Size(537, 36);
+            this.newTaskSubmitBtn.Size = new System.Drawing.Size(533, 36);
             this.newTaskSubmitBtn.TabIndex = 17;
             this.newTaskSubmitBtn.Text = "DODAJ ZADANIE";
             this.newTaskSubmitBtn.UseVisualStyleBackColor = false;
@@ -245,7 +213,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.newTaskPanel);
             this.Name = "UC_AddTask";
-            this.Size = new System.Drawing.Size(623, 450);
+            this.Size = new System.Drawing.Size(623, 330);
             this.newTaskPanel.ResumeLayout(false);
             this.newTaskPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -259,8 +227,6 @@
         private System.Windows.Forms.RadioButton importantNoRadio;
         private System.Windows.Forms.RadioButton importantYesRadio;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
-        private System.Windows.Forms.RichTextBox descriptionRichTexBox;
-        private System.Windows.Forms.Label descriptionLabel;
         private System.Windows.Forms.Label importantReqLabel;
         private System.Windows.Forms.Label importantLabel;
         private System.Windows.Forms.Label dateReqLabel;

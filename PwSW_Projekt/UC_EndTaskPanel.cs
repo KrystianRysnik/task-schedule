@@ -12,6 +12,7 @@ namespace PwSW_Projekt
 {
     public partial class UC_EndTaskPanel : UserControl
     {
+        Task task;
         string date;
 
         public UC_EndTaskPanel()
@@ -23,11 +24,15 @@ namespace PwSW_Projekt
         {
             InitializeComponent();
 
+            this.task = task;
+
             date = task.EndDate.ToLongDateString() + ", " + task.EndDate.ToShortTimeString();
 
             nameLabel.Text = task.Name;
             dateLabel.Text = date;
             dateLabel.Location = new Point(dateLabel.Parent.Width - dateLabel.Width - 15, 15);
+
+            toolTip.SetToolTip(nameLabel, task.Comment);
         }
     }
 }
