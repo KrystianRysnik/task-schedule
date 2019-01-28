@@ -57,6 +57,12 @@
     </Compile>
     <Compile Include="JsonData.cs" />
     <Compile Include="TaskCategory.cs" />
+    <Compile Include="UC_AddComment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_AddComment.Designer.cs">
+      <DependentUpon>UC_AddComment.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_EndTaskPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -92,6 +98,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form_Edit.resx">
       <DependentUpon>Form_Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_AddComment.resx">
+      <DependentUpon>UC_AddComment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_AddTask.resx">
       <DependentUpon>UC_AddTask.cs</DependentUpon>
